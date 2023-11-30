@@ -5,7 +5,7 @@
  *
  * @node: the pointer to the node to check
  *
- * return: 0 if node is null or not a root and 1 if the node is root
+ * Return: 0 if node is null or not a root and 1 if the node is root
  */
 
 int binary_tree_is_root(const binary_tree_t *node)

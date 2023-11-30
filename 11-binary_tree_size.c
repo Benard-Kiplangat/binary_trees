@@ -1,10 +1,9 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_inorder - a function that traverses an entire binary tree
- * using inorder traversal
- * @tree: a pointer to the root node of the tree to traverse
- * return: nothing
+ * binary_tree_size - a function that returns the size of a binary tree
+ * @tree: a pointer to the node to find its size
+ * Return: the size of the node
  */
 
 size_t binary_tree_size(const binary_tree_t *tree)
@@ -13,9 +12,8 @@ size_t binary_tree_size(const binary_tree_t *tree)
 
 	if (tree)
 	{
-		count++;
-		count += binary_tree_size(tree->left);
-		count += binary_tree_size(tree->right);
+		countl = binary_tree_size(tree->left) + 1;
+		countr = binary_tree_size(tree->right) + 1;
 	}
-	return (count);
+	return (countl + countr);
 }
