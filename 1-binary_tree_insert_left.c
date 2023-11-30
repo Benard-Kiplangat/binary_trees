@@ -13,22 +13,17 @@
 
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
-	binary_tree_t *bt_new_node = calloc(1, sizeof(binary_tree_t));
+	binary_tree_t *bt_new_node = binary_tree_node(parent, value);
 
 	if (parent == NULL || bt_new_node == NULL)
 		return (NULL);
 
-	bt_new_node->parent = parent;
-	bt_new_node->n = value;
-
 	if (parent->left != NULL)
 	{
 		bt_new_node->left = parent->left;
-		parent->left = bt_new_node;
 		parent->left->parent = bt_new_node;
 	}
-	else
-		parent->left = bt_new_node;
+	parent->left = bt_new_node;
 
 	return (bt_new_node);
 }
